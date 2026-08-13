@@ -19,6 +19,7 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 | **Portainer** | Dashboard | Graphical management tool to control containerized applications |
 | **PostgreSQL** | Database | Open-source relational database management system |
 | **pgAdmin** | Dashboard | Graphical management tool for PostgreSQL databases |
+| **Uptime Kuma** | Dashboard | Self-hosted monitoring tool to track the health, uptime, and performance of websites, APIs, servers, and network services |
 
 
 ## 📁 Directory Structure
@@ -31,7 +32,8 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 |   ├── homepage/
 |   ├── portainer/
 |   ├── postgres/
-|   └── pgadmin/
+|   ├── pgadmin/
+|   └── uptime-kuma/
 └── scripts/            # Utility and automation scripts
 ```
 

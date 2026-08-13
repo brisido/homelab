@@ -1,0 +1,14 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    restart: unless-stopped
+
+    volumes:
+      - ./data:/app/data
+
+    networks:
+      - homelab-net
+
+networks:
+  homelab-net:
+    external: true

@@ -8,3 +8,8 @@
         href: https://pgadmin.lab
         icon: pgadmin
         siteMonitor: https://pgadmin.lab
+
+    - Kuma:
+        href: https://kuma.lab
+        icon: uptime-kuma
+        siteMonitor: https://kuma.lab
