@@ -3,3 +3,8 @@
         href: https://portainer.lab
         icon: portainer
         siteMonitor: https://portainer.lab
+    
+    - pgAdmin:
+        href: https://pgadmin.lab
+        icon: pgadmin
+        siteMonitor: https://pgadmin.lab

@@ -17,6 +17,8 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 | **Nginx Proxy Manager** | Network | Reverse proxy and SSL certificate manager |
 | **Homepage** | Dashboard | Centralized dashboard for quick access to all services |
 | **Portainer** | Dashboard | Graphical management tool to control containerized applications |
+| **PostgreSQL** | Database | Open-source relational database management system |
+| **pgAdmin** | Dashboard | Graphical management tool for PostgreSQL databases |
 
 
 ## 📁 Directory Structure
@@ -25,9 +27,11 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 .
 ├── docs/               # Documentation and guides
 ├── infra/              # Infrastructure configurations and Docker setups
-|   ├── homepage/
 |   ├── nginx/
-|   └── portainer/
+|   ├── homepage/
+|   ├── portainer/
+|   ├── postgres/
+|   └── pgadmin/
 └── scripts/            # Utility and automation scripts
 ```
 
