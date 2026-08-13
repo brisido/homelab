@@ -1,0 +1,5 @@
+- Infraestrutura:
+    - Portainer:
+        href: https://portainer.lab
+        icon: portainer
+        siteMonitor: https://portainer.lab
