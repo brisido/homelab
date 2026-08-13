@@ -1,0 +1,31 @@
+title: Home Lab
+
+description: A description of my awesome homepage
+
+language: pt-BR
+
+theme: dark
+
+color: slate
+
+headerStyle: boxed
+
+target: _blank
+
+# statusStyle: "dot"
+
+bookmarksStyle: icons
+
+# background:
+  # image: /images/men-1518713775575-1675.jpg
+  # blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  # saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  # brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  # opacity: 90 # 0-100
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+  provider: google # google, duckduckgo, bing, baidu, brave or custom

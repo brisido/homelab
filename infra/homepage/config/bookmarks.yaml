@@ -1,0 +1,24 @@
+- DevOps | SRE | Dev:
+
+    - GitHub:
+        - href: https://github.com
+          abbr: GIT
+          icon: github
+
+    - Docker Hub:
+        - href: https://hub.docker.com
+          abbr: DH
+          icon: docker
+
+    - AWS:
+        - href: https://console.aws.amazon.com
+          abbr: AWS
+          icon: aws
+
+
+- Entretenimento:
+
+    - YouTube:
+        - href: https://youtube.com/
+          abbr: YT
+          icon: youtube

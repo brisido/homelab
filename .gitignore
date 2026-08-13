@@ -1,0 +1,32 @@
+# Environment files
+.env
+.env.*
+
+# Allow examples
+!.env.example
+
+# Application data
+**/data/
+**/cache/
+**/logs/
+
+# Databases
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Backups
+**/backups/
+
+# TLS private material
+**/*-key.pem
+**/*.pem
+
+# Generated certificates
+**/*.crt
+**/*.key
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

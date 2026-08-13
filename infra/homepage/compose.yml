@@ -1,0 +1,20 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+
+    volumes:
+      - ./config:/app/config
+      - ${BACKGROUND_IMAGE}:/app/public/images
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
+
+    networks:
+      - homelab-net
+
+networks:
+  homelab-net:
+    external: true
