@@ -16,6 +16,7 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 | :--- | :--- | :--- |
 | **Nginx Proxy Manager** | Network | Reverse proxy and SSL certificate manager |
 | **Homepage** | Dashboard | Centralized dashboard for quick access to all services |
+| **Portainer** | Dashboard | Graphical management tool to control containerized applications |
 
 
 ## 📁 Directory Structure
@@ -25,16 +26,13 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 ├── docs/               # Documentation and guides
 ├── infra/              # Infrastructure configurations and Docker setups
 |   ├── homepage/
-|   └── nginx/
+|   ├── nginx/
+|   └── portainer/
 └── scripts/            # Utility and automation scripts
 ```
 
 
 ## 📚 Documentation
 
-```markdown
 For detailed guides and architecture diagrams, check the `docs/` directory:
-- [Hardware & Specifications](docs/hardware.md)
-- [Network Architecture](docs/architecture.md)
-- [Backup & Recovery Strategy](docs/backup-strategy.md)
-```
+- [SSL Certificates](docs/https-configuration/ssl-certificates.md)
