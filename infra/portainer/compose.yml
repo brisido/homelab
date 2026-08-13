@@ -1,8 +1,6 @@
 services:
   portainer:
-
     image: portainer/portainer-ce:latest
-
     restart: unless-stopped
 
     volumes:
