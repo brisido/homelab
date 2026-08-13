@@ -2,17 +2,14 @@
 
 docker_compose()
 {
-    cd ../$1
-
-    for FOLDER in */; do
-        [ -d "$FOLDER" ] || continue
-
-        if [ -f "$FOLDER/$DOCKER_COMPOSE_FILE" ]; then
-            cd $FOLDER
-            docker compose $2
-            cd ..
+    for DOCKER_FOLDER in "${DOCKER_FOLDERS[@]}"; do
+        echo -e "\n${DOCKER_FOLDER} folder ..."
+        if [ -d "../${DOCKER_FOLDER}" ]; then
+            for DOCKER_SUBFOLDER in "../${DOCKER_FOLDER}"/*/; do
+                docker compose --project-directory ${DOCKER_SUBFOLDER} ${1}
+            done
         else
-            echo -e "${RED}[ERROR] $DOCKER_COMPOSE_FILE not found in $FOLDER${RESET}"
+            echo -e "${YELLOW}[WARN] Service not found.${RESET}"
         fi
     done
 }

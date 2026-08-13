@@ -67,7 +67,7 @@ start_menu()
 
     case $option in
     1)
-        source docker_settings.sh docker_compose infra "up -d"
+        source docker_settings.sh docker_compose "up -d"
     ;;
     2)
         source operating_system.sh linux_distro
@@ -75,11 +75,10 @@ start_menu()
         source docker_settings.sh docker_network
     ;;
     3)
-        source docker_settings.sh docker_compose infra "pull"
+        source docker_settings.sh docker_compose "pull"
     ;;
     4)
         ca_menu
-        # source ssl-certificates.sh generate_certs
     ;;
     5)
         main_menu
@@ -106,9 +105,11 @@ main_menu()
 
     1. Start Homelab
     2. Stop Homelab
-    3. Exit
+    3. Restart Homelab
+    4. Restart NGINX
+    5. Exit
 
-    Please enter your choice [1-3]
+    Please enter your choice [1-5]
 
     > " option
 
@@ -117,9 +118,17 @@ main_menu()
         start_menu
     ;;
     2)
-        source docker_settings.sh docker_compose infra "down"
+        source docker_settings.sh docker_compose "down"
     ;;
     3)
+        source docker_settings.sh docker_compose "down"
+        source docker_settings.sh docker_compose "up -d"
+    ;;
+    4)
+        echo -e "\nRestarting NGINX ..."
+        docker compose --project-directory ../infra/nginx/ restart
+    ;;
+    5)
         echo -e "\n\tThanks for using this script!\n"
         exit 0
     ;;

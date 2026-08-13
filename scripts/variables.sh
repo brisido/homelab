@@ -7,9 +7,7 @@ YELLOW='\033[033m'
 BLUE='\033[034m'
 GRAY_BGD='\033[040m'
 
-DOCKER_FOLDERS=("infra" "apps")
-DOCKER_SERVICES=()
-DOCKER_COMPOSE_FILE='compose.yml'
+DOCKER_FOLDERS=("infra")
 DOCKER_NETWORK_NAME='homelab-net'
 
 NGINX_CONF_DIR='infra/nginx/conf.d'
