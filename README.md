@@ -21,6 +21,7 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 | **pgAdmin** | Dashboard | Graphical management tool for PostgreSQL databases |
 | **Uptime Kuma** | Dashboard | Self-hosted monitoring tool to track the health, uptime, and performance of websites, APIs, servers, and network services |
 | **Swing Music** | Music Streaming | Self-hosted music streaming server |
+| **Jellyfin** | Media Streaming | Self-hosted media server system that lets you host, organize, and stream your own personal collection of movies, TV shows, music, and photos to any device |
 
 
 ## 📁 Directory Structure
@@ -28,7 +29,8 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 ```text
 .
 ├── apps/               # Apps configurations and Docker setups
-|   └── swingmusic/
+|   ├── swingmusic/
+|   └── jellyfin/
 ├── docs/               # Documentation and guides
 ├── infra/              # Infrastructure configurations and Docker setups
 |   ├── nginx/

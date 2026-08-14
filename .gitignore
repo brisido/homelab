@@ -9,6 +9,7 @@
 **/data/
 **/cache/
 **/logs/
+**/jellyfin/config/
 
 # Databases
 **/*.db

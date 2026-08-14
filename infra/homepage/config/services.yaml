@@ -19,3 +19,9 @@
         href: https://swingmusic.lab
         icon: navidrome
         siteMonitor: https://swingmusic.lab
+    
+    - Jellyfin:
+        href: https://jellyfin.lab
+        icon: jellyfin.png
+        siteMonitor: https://jellyfin.lab
+        ping: https://jellyfin.lab

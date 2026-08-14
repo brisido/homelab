@@ -1,0 +1,21 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    restart: unless-stopped
+
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+
+    volumes:
+      - ./config:/config
+      - ${MOVIES_FOLDER}:/media/movies
+      - ${MUSIC_FOLDER}:/media/music
+
+    networks:
+      - homelab-net
+
+networks:
+  homelab-net:
+    external: true
