@@ -14,7 +14,7 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 
 | Service | Category | Description |
 | :--- | :--- | :--- |
-| **Nginx Proxy Manager** | Network | Reverse proxy and SSL certificate manager |
+| **Nginx** | Network | Reverse proxy and SSL termination |
 | **Homepage** | Dashboard | Centralized dashboard for quick access to all services |
 | **Portainer** | Dashboard | Graphical management tool to control containerized applications |
 | **PostgreSQL** | Database | Open-source relational database management system |

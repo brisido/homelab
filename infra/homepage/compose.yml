@@ -1,6 +1,6 @@
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:latest
+    image: ghcr.io/gethomepage/homepage:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
 
     volumes:

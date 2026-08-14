@@ -1,6 +1,6 @@
 services:
   swingmusic:
-    image: ghcr.io/swingmx/swingmusic:latest
+    image: ghcr.io/swingmx/swingmusic:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
 
     environment:

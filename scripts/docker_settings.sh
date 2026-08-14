@@ -41,11 +41,13 @@ docker_install()
 {
     msg ${TITLE} "\nChecking for Docker ..."
 
-    if [ docker -v 2> /dev/null ]; then
+    if [ ! command -v docker >/dev/null 2>&1 ]; then
         msg ${ERROR} "Docker not found."
 
         case "$DISTRO_FAMILY" in
             *debian*|*ubuntu*)
+                # reference: [https://docs.docker.com/engine/install/debian/]
+                
                 # Add Docker's official GPG key:
                 sudo apt update
                 sudo apt install ca-certificates curl
@@ -57,9 +59,9 @@ docker_install()
                 sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
 Types: deb
 URIs: https://download.docker.com/linux/debian
-uites: $(. /etc/os-release && echo "$VERSION_CODENAME")
-omponents: stable
-rchitectures: $(dpkg --print-architecture)
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Architectures: $(dpkg --print-architecture)
 Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 

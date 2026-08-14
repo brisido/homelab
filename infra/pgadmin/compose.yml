@@ -1,6 +1,6 @@
 services:
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
 
     environment:

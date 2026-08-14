@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:alpine
+    image: nginx:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
 
     ports:

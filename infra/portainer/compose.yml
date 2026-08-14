@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ce:latest
+    image: portainer/portainer-ce:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
 
     volumes:

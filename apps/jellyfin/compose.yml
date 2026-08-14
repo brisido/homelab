@@ -1,17 +1,15 @@
 services:
   jellyfin:
-    image: jellyfin/jellyfin:latest
+    image: jellyfin/jellyfin:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
-
-    environment:
-      PUID: ${PUID}
-      PGID: ${PGID}
-      TZ: ${TZ}
 
     volumes:
       - ./config:/config
+      - ./cache:/cache
       - ${MOVIES_FOLDER}:/media/movies
       - ${MUSIC_FOLDER}:/media/music
+      - ${SHOWS_FOLDER}:/media/shows
+      - ${BOOKS_FOLDER}:/media/books
 
     networks:
       - homelab-net
