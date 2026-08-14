@@ -13,3 +13,9 @@
         href: https://kuma.lab
         icon: uptime-kuma
         siteMonitor: https://kuma.lab
+
+- Apps:
+    - Swing Music:
+        href: https://swingmusic.lab
+        icon: navidrome
+        siteMonitor: https://swingmusic.lab

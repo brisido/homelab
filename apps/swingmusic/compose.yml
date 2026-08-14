@@ -1,0 +1,22 @@
+services:
+  swingmusic:
+    image: ghcr.io/swingmx/swingmusic:latest
+    restart: unless-stopped
+
+    environment:
+      - SWINGMUSIC_PORT=1970
+      - SWINGMUSIC_DEVICE_NAME=${SWINGMUSIC_DEVICE_NAME}
+
+    volumes:
+      - swingmusic_data:/config
+      - ${MUSIC_FOLDER}:/music
+
+    networks:
+      - homelab-net
+
+volumes:
+  swingmusic_data:
+
+networks:
+  homelab-net:
+    external: true
