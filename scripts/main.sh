@@ -115,9 +115,10 @@ main_menu()
     2. Stop Homelab
     3. Restart Homelab
     4. Restart NGINX
-    5. Exit
+    5. Load New Service
+    6. Exit
 
-    Please enter your choice [1-5]
+    Please enter your choice [1-6]
 
     > " option
 
@@ -137,6 +138,14 @@ main_menu()
         docker compose --project-directory ../infra/nginx/ restart
     ;;
     5)
+        source docker_settings.sh docker_compose "up -d"
+
+        source ssl-certificates.sh generate_certs
+
+        msg ${TITLE} "\nRestarting NGINX ..."
+        docker compose --project-directory ../infra/nginx/ restart
+    ;;
+    6)
         msg ${TITLE} "\n\tThanks for using this script!"
         exit 0
     ;;
