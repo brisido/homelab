@@ -20,12 +20,15 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 | **PostgreSQL** | Database | Open-source relational database management system |
 | **pgAdmin** | Dashboard | Graphical management tool for PostgreSQL databases |
 | **Uptime Kuma** | Dashboard | Self-hosted monitoring tool to track the health, uptime, and performance of websites, APIs, servers, and network services |
+| **Swing Music** | Music Streaming | Self-hosted music streaming server |
 
 
 ## 📁 Directory Structure
 
 ```text
 .
+├── apps/               # Apps configurations and Docker setups
+|   └── swingmusic/
 ├── docs/               # Documentation and guides
 ├── infra/              # Infrastructure configurations and Docker setups
 |   ├── nginx/
