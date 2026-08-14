@@ -3,35 +3,35 @@
 docker_compose()
 {
     for DOCKER_FOLDER in "${DOCKER_FOLDERS[@]}"; do
-        echo -e "\n${DOCKER_FOLDER} folder ..."
+        msg ${TITLE} "\n${DOCKER_FOLDER} folder ..."
         if [ -d "../${DOCKER_FOLDER}" ]; then
             for DOCKER_SUBFOLDER in "../${DOCKER_FOLDER}"/*/; do
                 docker compose --project-directory ${DOCKER_SUBFOLDER} ${1}
             done
         else
-            echo -e "${YELLOW}[WARN] Service not found.${RESET}"
+            msg ${WARN} "Service not found."
         fi
     done
 }
 
 docker_network()
 {
-    echo -e "\nChecking for Docker Network ..."
+    msg ${TITLE} "\nChecking for Docker Network ..."
 
     if [ $(docker network ls | grep $DOCKER_NETWORK_NAME | wc -l) != 1 ]; then
-        echo -e "${RED}[ERROR] Docker Network not found.${RESET}"
+        msg ${ERROR} "Docker Network not found."
 
-        echo -e "\nCreating Docker Network ..."
+        msg ${TITLE} "\nCreating Docker Network ..."
         docker network create $DOCKER_NETWORK_NAME
 
         if [ $(docker network ls | grep $DOCKER_NETWORK_NAME | wc -l) == 1 ]; then
-            echo -e "${GREEN}[OK] Docker Network \"$DOCKER_NETWORK_NAME\" created!${RESET}\n"
+            msg ${INFO} "Docker Network \"$DOCKER_NETWORK_NAME\" created!"
         else
-            echo -e "${RED}[ERROR] An unexpected error occurred.${RESET}\n"
+            msg ${CRITICAL} "An unexpected error occurred."
             exit 1
         fi
     else
-        echo -e "${GREEN}[OK] Docker Network $DOCKER_NETWORK_NAME:${RESET}\n"
+        msg ${INFO} "Docker Network $DOCKER_NETWORK_NAME:"
         
         docker network inspect $DOCKER_NETWORK_NAME
     fi
@@ -39,10 +39,10 @@ docker_network()
 
 docker_install()
 {
-    echo -e "\nChecking for Docker ..."
+    msg ${TITLE} "\nChecking for Docker ..."
 
     if [ docker -v 2> /dev/null ]; then
-        echo -e "${RED}[ERROR] Docker not found.${RESET}"
+        msg ${ERROR} "Docker not found."
 
         case "$DISTRO_FAMILY" in
             *debian*|*ubuntu*)
@@ -72,7 +72,7 @@ EOF
                 docker -v
             ;;
             *rhel*|*fedora*|*centos*)
-                echo 'Red Hat Based - under construction'
+                msg ${TITLE} "Red Hat Based - under construction"
 
                 sudo dnf update
 
@@ -81,12 +81,12 @@ EOF
 
             ;;
             *)
-                echo -e "${RED}OS $ID Not Supported${RESET}\n"
+                msg ${CRITICAL} "Operational System $ID Not Supported."
                 exit 1
             ;;
         esac
     else
-        echo -e "${GREEN}$(docker -v)${RESET}"
+        msg ${INFO} "$(docker -v)"
     fi
 }
 

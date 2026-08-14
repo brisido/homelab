@@ -1,11 +1,12 @@
 #!/bin/bash
 
+CRITICAL='\n\033[041m[CRITICAL]'
+ERROR='\n\033[031m[ERROR]'
+INFO='\n\033[032m[OK]'
+WARN='\n\033[033m[WARN]'
+TITLE='\033[036m'
+BOX='\033[040m'
 RESET='\033[0m'
-RED='\033[031m'
-GREEN='\033[032m'
-YELLOW='\033[033m'
-BLUE='\033[034m'
-GRAY_BGD='\033[040m'
 
 DOCKER_FOLDERS=("infra")
 DOCKER_NETWORK_NAME='homelab-net'
@@ -14,4 +15,4 @@ NGINX_CONF_DIR='infra/nginx/conf.d'
 NGINX_CERT_DIR='infra/nginx/certs'
 NGINX_CERT_NAME='homelab'
 
-CA_DIR="certificates"
+CA_DIR='certificates'

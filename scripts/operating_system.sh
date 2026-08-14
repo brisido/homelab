@@ -2,7 +2,7 @@
 
 linux_distro()
 {
-    echo -e "\nChecking OS ..."
+    msg ${TITLE} "\nChecking OS ..."
 
     if [ -f /etc/os-release ]; then
         . /etc/os-release
@@ -11,18 +11,18 @@ linux_distro()
 
         case "$DISTRO_FAMILY" in
             *debian*|*ubuntu*)
-                echo -e "${GREEN}[OK] Debian Based${RESET}"
+                msg ${INFO} "Debian Based"
             ;;
             *rhel*|*fedora*|*centos*)
-                echo -e "${GREEN}[OK] Red Hat Based${RESET}"
+                msg ${INFO} "Red Hat Based"
             ;;
             *)
-                echo -e "${RED}OS $ID Not Supported${RESET}\n"
+                msg ${CRITICAL} "Operational System $ID Not Supported."
                 exit 1
             ;;
         esac
     else
-        echo -e "${RED}[ERROR] Unable to determine OS: file /etc/os-release not found.${RESET}"
+        msg ${CRITICAL} "Unable to determine OS: file /etc/os-release not found."
         exit 1
     fi
 }

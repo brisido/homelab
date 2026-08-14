@@ -1,5 +1,13 @@
 #!/bin/bash
 
+msg()
+{
+    local STATUS="${1}"
+    local MESSAGE="${2}"
+
+    echo -e "${STATUS} ${MESSAGE} ${RESET}"
+}
+
 ca_menu()
 {
     clear
@@ -8,7 +16,7 @@ ca_menu()
     [ Homelab Manager ] ===================================
     ===================== [ Create/Update CA Certificates ]
 
-    1. Install mkcert and Create CA
+    1. Install mkcert and Create Certificate Authority (CA)
     2. Generate a Certificate for all services
     3. Run all options above (1 and 2)
     4. Go Back
@@ -35,11 +43,11 @@ ca_menu()
         start_menu
     ;;
     5)
-        echo -e "\n\tThanks for using this script!\n"
+        msg ${TITLE} "\n\tThanks for using this script!"
         exit 0
     ;;
     *)
-        echo -e "\n\t${RED}Invalid option. Please try again.${RESET}\n"
+        msg ${ERROR} "Invalid option. Please try again."
         sleep 2
         ca_menu
     ;;
@@ -84,11 +92,11 @@ start_menu()
         main_menu
     ;;
     6)
-        echo -e "\n\tThanks for using this script!\n"
+        msg ${TITLE} "\n\tThanks for using this script!"
         exit 0
     ;;
     *)
-        echo -e "\n\t${RED}Invalid option. Please try again.${RESET}\n"
+        msg ${ERROR} "Invalid option. Please try again."
         sleep 2
         start_menu
     ;;
@@ -125,15 +133,15 @@ main_menu()
         source docker_settings.sh docker_compose "up -d"
     ;;
     4)
-        echo -e "\nRestarting NGINX ..."
+        msg ${TITLE} "\nRestarting NGINX ..."
         docker compose --project-directory ../infra/nginx/ restart
     ;;
     5)
-        echo -e "\n\tThanks for using this script!\n"
+        msg ${TITLE} "\n\tThanks for using this script!"
         exit 0
     ;;
     *)
-        echo -e "\n\t${RED}Invalid option. Please try again.${RESET}\n"
+        msg ${ERROR} "Invalid option. Please try again."
         sleep 2
         main_menu
     ;;
