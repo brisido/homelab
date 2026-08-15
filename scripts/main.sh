@@ -40,65 +40,16 @@ ca_menu()
         source ssl-certificates.sh generate_certs
     ;;
     4)
-        start_menu
-    ;;
-    5)
-        msg ${TITLE} "\n\tThanks for using this script!"
-        exit 0
-    ;;
-    *)
-        msg ${ERROR} "Invalid option. Please try again."
-        sleep 2
-        ca_menu
-    ;;
-    esac
-}
-
-start_menu()
-{
-    clear
-
-    read -p "
-    [ Homelab Manager ] ===================================
-    ===================================== [ Start Homelab ]
-
-    1. Run Homelab
-    2. Check Docker Dependencies
-    3. Pull Docker Images
-    4. Create/Update CA Certificates
-    5. Go Back
-    6. Exit
-
-    Please enter your choice [1-6]
-
-    > " option
-
-    case $option in
-    1)
-        source docker_settings.sh docker_compose "up -d"
-    ;;
-    2)
-        source operating_system.sh linux_distro
-        source docker_settings.sh docker_install
-        source docker_settings.sh docker_network
-    ;;
-    3)
-        source docker_settings.sh docker_compose "pull"
-    ;;
-    4)
-        ca_menu
-    ;;
-    5)
         main_menu
     ;;
-    6)
+    5)
         msg ${TITLE} "\n\tThanks for using this script!"
         exit 0
     ;;
     *)
         msg ${ERROR} "Invalid option. Please try again."
         sleep 2
-        start_menu
+        ca_menu
     ;;
     esac
 }
@@ -116,7 +67,10 @@ main_menu()
     3. Restart Homelab
     4. Restart NGINX
     5. Load New Service
-    6. Exit
+    6. Check Docker Dependencies
+    7. Pull Docker Images
+    8. Create/Update CA Certificates
+    9. Exit
 
     Please enter your choice [1-6]
 
@@ -124,7 +78,7 @@ main_menu()
 
     case $option in
     1)
-        start_menu
+        source docker_settings.sh docker_compose "up -d"
     ;;
     2)
         source docker_settings.sh docker_compose "down"
@@ -146,6 +100,17 @@ main_menu()
         docker compose --project-directory ../infra/nginx/ restart
     ;;
     6)
+        source operating_system.sh linux_distro
+        source docker_settings.sh docker_install
+        source docker_settings.sh docker_network
+    ;;
+    7)
+        source docker_settings.sh docker_compose "pull"
+    ;;
+    8)
+        ca_menu
+    ;;
+    9)
         msg ${TITLE} "\n\tThanks for using this script!"
         exit 0
     ;;
