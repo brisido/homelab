@@ -1,6 +1,6 @@
 services:
   uptime-kuma:
-    image: elestio/uptime-kuma:${SOFTWARE_VERSION_TAG}
+    image: louislam/uptime-kuma:${SOFTWARE_VERSION_TAG}
     restart: unless-stopped
 
     volumes:

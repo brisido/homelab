@@ -3,9 +3,10 @@
 docker_compose()
 {
     for DOCKER_FOLDER in "${DOCKER_FOLDERS[@]}"; do
-        msg ${TITLE} "\n${DOCKER_FOLDER} folder ..."
+        msg ${TITLE} "\n🖿 ${DOCKER_FOLDER}/"
         if [ -d "../${DOCKER_FOLDER}" ]; then
             for DOCKER_SUBFOLDER in "../${DOCKER_FOLDER}"/*/; do
+                msg ${TITLE} "\n⟶  $(basename ${DOCKER_SUBFOLDER}):"
                 docker compose --project-directory ${DOCKER_SUBFOLDER} ${1}
             done
         else

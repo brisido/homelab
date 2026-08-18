@@ -1,3 +1,15 @@
+- Apps:
+    - Swing Music:
+        href: https://swingmusic.lab
+        icon: navidrome
+        siteMonitor: https://swingmusic.lab
+    
+    - Jellyfin:
+        href: https://jellyfin.lab
+        icon: jellyfin.png
+        siteMonitor: https://jellyfin.lab
+        ping: https://jellyfin.lab
+
 - Infraestrutura:
     - Portainer:
         href: https://portainer.lab
@@ -14,14 +26,13 @@
         icon: uptime-kuma
         siteMonitor: https://kuma.lab
 
-- Apps:
-    - Swing Music:
-        href: https://swingmusic.lab
-        icon: navidrome
-        siteMonitor: https://swingmusic.lab
-    
-    - Jellyfin:
-        href: https://jellyfin.lab
-        icon: jellyfin.png
-        siteMonitor: https://jellyfin.lab
-        ping: https://jellyfin.lab
+- Monitoring:
+    - Grafana:
+        href: https://grafana.lab
+        icon: grafana
+        siteMonitor: https://grafana.lab
+
+    - Prometheus:
+        href: https://prometheus.lab
+        icon: prometheus
+        siteMonitor: https://prometheus.lab

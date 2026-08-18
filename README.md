@@ -22,6 +22,8 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 | **Uptime Kuma** | Dashboard | Self-hosted monitoring tool to track the health, uptime, and performance of websites, APIs, servers, and network services |
 | **Swing Music** | Music Streaming | Self-hosted music streaming server |
 | **Jellyfin** | Media Streaming | Self-hosted media server system that lets you host, organize, and stream your own personal collection of movies, TV shows, music, and photos to any device |
+| **Prometheus** | Monitoring | Open-source system monitoring and alerting toolkit designed for reliability and scaling in modern cloud-native environments |
+| **Grafana** | Dashboard | Open-source data visualization and analytics platform |
 
 
 ## 📁 Directory Structure
@@ -39,6 +41,9 @@ Configuration and orchestration files for my personal homelab, focused on self-h
 |   ├── postgres/
 |   ├── pgadmin/
 |   └── uptime-kuma/
+├── monitoring/         # Monitoring configurations and Docker setups
+|   ├── grafana/
+|   └── prometheus/
 └── scripts/            # Utility and automation scripts
 ```
 

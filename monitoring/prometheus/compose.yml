@@ -1,0 +1,22 @@
+services:
+  prometheus:
+    image: prom/prometheus:${SOFTWARE_VERSION_TAG}
+    restart: unless-stopped
+
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+
+    networks:
+      - homelab-net
+
+volumes:
+  prometheus_data:
+
+networks:
+  homelab-net:
+    external: true

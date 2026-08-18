@@ -8,7 +8,7 @@ TITLE='\033[036m'
 BOX='\033[040m'
 RESET='\033[0m'
 
-DOCKER_FOLDERS=("infra" "apps")
+DOCKER_FOLDERS=("infra" "apps" "monitoring")
 DOCKER_NETWORK_NAME='homelab-net'
 
 NGINX_CONF_DIR='infra/nginx/conf.d'
